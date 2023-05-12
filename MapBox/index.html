@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mapbox Routing App</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css' rel='stylesheet' />
+
+
+
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { position: absolute; top: 50px; bottom: 0; width: 100%; }
+        #routeForm { position: absolute; top: 10px; left: 10px; z-index: 10; }
+
+        /* Added styles for the suggestions */
+        ul#suggestions {
+            background-color: white;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul#suggestions li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        ul#suggestions li:hover {
+            background-color: #eee;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id='map' ></div>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoicGhpbGxkZXYiLCJhIjoiY2xoazB6cHV0MDViNTNwcDR1czJycGc0cSJ9.wY2-LXk_KVtYZGf9f3Th3A';
+  var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-96, 37.8],
+    zoom: 2
+  });
+
+</script>
+
+<div id="map"></div>
+<form id="routeForm">
+    <input id="destination" type="text" placeholder="Enter your destination">
+    <ul id="suggestions"></ul>
+    <input type="submit" value="Get Directions">
+    <button id="clearRoute" type="button">Clear Route</button>
+</form>
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+<script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>
