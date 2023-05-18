@@ -1,5 +1,4 @@
 // Initialize Firebase
-// Initialize Firebase
 var firebaseConfig = {
   apiKey: "AIzaSyBQxjy-jwlLn3W64wfS68iBQrPGCWqkpvU",
   authDomain: "mapboxtest-386503.firebaseapp.com",
